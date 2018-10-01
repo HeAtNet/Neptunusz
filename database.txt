@@ -1,0 +1,41 @@
+user
+	id
+	name
+	mail
+	pass
+	startDate
+	status
+	role
+	isdel
+	
+subject
+	id
+	name
+	author
+	from
+	to
+	classroom
+	type
+	isdel
+	
+exam
+	id
+	subid
+	from
+	to
+	classroom
+	type
+	isdel
+	
+usersub
+	userid
+	subid
+	nth
+	isdel
+
+userexam
+	userid
+	examid
+	nth
+	isdel
+	
