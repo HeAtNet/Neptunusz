@@ -1,1 +1,3 @@
-/* TODO: Add your SQL INSERTs here. */
+insert into User (id, name, mail, pass, start_date, status, role, is_del) values (1, 'name0', 'mail0', 'pass0', CURRENT_TIMESTAMP(), 'ACTIVE0', 'STUDENT0', false);
+insert into User (id, name, mail, pass, start_date, status, role, is_del) values (2, 'name1', 'mail1', 'pass1', CURRENT_TIMESTAMP(), 'ACTIVE1', 'STUDENT1', false);
+insert into User (id, name, mail, pass, start_date, status, role, is_del) values (3, 'name2', 'mail2', 'pass2', CURRENT_TIMESTAMP(), 'ACTIVE2', 'STUDENT2', false);
