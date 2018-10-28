@@ -1,3 +1,3 @@
-insert into User (id, name, mail, pass, start_date, status, role, is_del) values (1, 'name0', 'mail0', 'pass0', CURRENT_TIMESTAMP(), 'ACTIVE0', 'STUDENT0', false);
-insert into User (id, name, mail, pass, start_date, status, role, is_del) values (2, 'name1', 'mail1', 'pass1', CURRENT_TIMESTAMP(), 'ACTIVE1', 'STUDENT1', false);
-insert into User (id, name, mail, pass, start_date, status, role, is_del) values (3, 'name2', 'mail2', 'pass2', CURRENT_TIMESTAMP(), 'ACTIVE2', 'STUDENT2', false);
+insert into User (id, username, name, mail, pass, start_date, status, role, is_del) values (1, 'ASD123', 'name0', 'mail0', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', CURRENT_TIMESTAMP(), 'ACTIVE', 'STUDENT', false);
+insert into User (id, username, name, mail, pass, start_date, status, role, is_del) values (2, 'SDF234', 'name1', 'mail1', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', CURRENT_TIMESTAMP(), 'ACTIVE', 'STUDENT', false);
+insert into User (id, username, name, mail, pass, start_date, status, role, is_del) values (3, 'DFG345', 'name2', 'mail2', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', CURRENT_TIMESTAMP(), 'ACTIVE', 'STUDENT', false);
