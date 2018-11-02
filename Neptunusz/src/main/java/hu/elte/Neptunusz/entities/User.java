@@ -69,19 +69,4 @@ public class User{
     	ACTIVE, PASSIVE
     }
 
-    public void setId(Integer id) {
-    	this.id = id;
-    }
-
-	public String getUsername() {
-		return this.username;
-	}
-
-	public String getPassword() {
-		return this.pass;
-	}
-
-	public Role getRole() {
-		return this.role;
-	}
 }
