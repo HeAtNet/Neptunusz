@@ -10,7 +10,10 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,13 +44,17 @@ public class Subject {
 	@Column(nullable = false)
 	private String classroom;
 	
-	//@Column(nullable = false)
-    //@Enumerated(EnumType.STRING)
-	//private Type type;
+	@Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+	private Type type;
 	
 	@OneToMany(mappedBy="subject")
 	@Column
 	private List<Exam> exams;
+	
+	@ManyToMany(mappedBy = "subjects")
+	@JsonBackReference
+	private List<User> users;
 	
 	@Column(nullable = false)
     private Boolean is_del;

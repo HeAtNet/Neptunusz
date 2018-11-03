@@ -10,6 +10,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -67,11 +69,13 @@ public class User{
     @Column
     private List<Message> sent;
 
-    //@Column
-   // private List<Exam> exams;
+    @ManyToMany
+    @JoinTable
+    private List<Exam> exams;
     
-    //@Column
-    //private List<Subject> subjects;
+    @ManyToMany
+    @JoinTable
+    private List<Subject> subjects;
     
     @Column(nullable = false)
     private Boolean is_del;

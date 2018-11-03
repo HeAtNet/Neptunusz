@@ -1,6 +1,7 @@
 package hu.elte.Neptunusz.entities;
 
 import java.time.LocalTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -47,6 +49,10 @@ public class Exam {
 	
 	@Column(nullable = false)
     private Boolean is_del;
+	
+	@ManyToMany(mappedBy = "exams")
+	@JsonBackReference
+	private List<User> examers;
 	
 	public enum ExamType{
 		WRITING,ORAL,WRITING_AND_ORAL;

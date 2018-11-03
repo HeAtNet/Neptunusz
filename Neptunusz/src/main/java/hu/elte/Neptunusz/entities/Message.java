@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import hu.elte.Neptunusz.entities.Exam.ExamType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,8 +31,10 @@ public class Message {
 	private String text;
 	
 	@ManyToOne
+	@JsonBackReference
 	private User sender;
 	
 	@ManyToOne
+	@JsonBackReference
 	private User adresse;
 }
