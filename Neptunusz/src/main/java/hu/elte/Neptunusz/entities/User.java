@@ -1,6 +1,7 @@
 package hu.elte.Neptunusz.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -56,13 +58,27 @@ public class User{
     @Enumerated(EnumType.STRING)
     private Role role;
     // STUDENT or TEACHER
+    
+    @OneToMany(mappedBy = "adresse")
+    @Column
+    private List<Message> inbox;
+    
+    @OneToMany(mappedBy = "sender")
+    @Column
+    private List<Message> sent;
 
+    //@Column
+   // private List<Exam> exams;
+    
+    //@Column
+    //private List<Subject> subjects;
+    
     @Column(nullable = false)
     private Boolean is_del;
     // true = User deleted
 
     public enum Role {
-    	STUDENT, TEACHER
+    	ROLE_STUDENT, ROLE_TEACHER
     }
 
     public enum Status {
