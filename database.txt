@@ -39,3 +39,9 @@ userexam
 	nth
 	isdel
 	
+
+
+user-be kellene egy subjecteket tároló list, hogy meg tudjuk csinálni a kapcsolatot
+
+ROLE_STUDENT
+ROLE_TEACHER 
