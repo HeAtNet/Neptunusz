@@ -6,4 +6,4 @@ insert into subject (name,start_of_lesson,end_of_lesson,classroom,type,is_del) v
 
 insert into exam (start_of_exam,end_of_exam,classroom,type,is_del, subject_id) values ('8:00','11:00','0-822- Bólyai', 'ORAL',false,1);
 
-insert into message (title,text,sender_id,adresse_id) values ('Óra elmaradás','Kedves hallgatók! A mai gyakorlat elmarad',1,2);
+insert into message (title,text,sender_id,adresse_id,time_of_message) values ('Óra elmaradás','Kedves hallgatók! A mai gyakorlat elmarad',1,2,CURRENT_TIMESTAMP());
