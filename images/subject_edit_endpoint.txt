@@ -1,0 +1,22 @@
+#https://www.websequencediagrams.com/
+title Targy adatainak modositasa
+
+User->Subject vegpont: GET: Targy lekerese
+note right of Subject vegpont
+    Targy kikeresese
+    az adatbazisbol
+end note
+Subject vegpont-->User: A kert targy reszletei
+
+note left of User
+    Targy adatainak
+    modositasa
+end note
+
+User->Subject vegpont: PUT: Modositott targyadatok
+note right of Subject vegpont
+    Ellenorzes,
+    adatbazisba iras
+end note
+Subject vegpont-->User: Modositas eredmenye
+

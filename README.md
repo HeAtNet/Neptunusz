@@ -77,6 +77,8 @@ TODO::frontend
    - /subject/{id}: Targy torlese
    - /user/{id}: Felhasznalo torlese
 
+Egy vegpont leirasa: **Targy adatainak modositasa**
+![Targy adatainak modositasa](images/subject_edit_endpoint.png)
 
 ### 2.3 Felhasznalo modell
 
