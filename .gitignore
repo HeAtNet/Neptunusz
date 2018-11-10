@@ -1,0 +1,6 @@
+Neptunusz/bin/
+backend/target/
+backend/.settings/
+backend/.project
+backend/.factorypath
+backend/.classpath
