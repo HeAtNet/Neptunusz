@@ -57,24 +57,24 @@ TODO::frontend
    - /exams/{id}: Vizsga lekerdezese
    - /messages: Uzenetek listazasa
    - /messages/{id}: Uzenet lekerdezese
-   - /subject: Targyak listazasa
-   - /subject/{id}: Targy lekerdezese
+   - /subjects: Targyak listazasa
+   - /subjects/{id}: Targy lekerdezese
    - /user: Felhasznalok listazasa
    - /user/{id}: Felhasznalo lekerdezese
  - Post
    - /exams: Vizsga hozzaadasa
    - /messages: Uzenet hozzaadasa
-   - /subject: Targy hozzaadasa
+   - /subjects: Targy hozzaadasa
    - /user: Felhasznalo hozzaadasa
  - Put
    - /exams/{id}: Vizsga modositasa
    - /messages/{id}: Uzenet modositasa
-   - /subject/{id}: Targy modositasa
+   - /subjects/{id}: Targy modositasa
    - /user/{id}: Felhasznalo modositasa
  - Delete
    - /exams/{id}: Vizsga torlese
    - /messages/{id}: Uzenet torlese
-   - /subject/{id}: Targy torlese
+   - /subjects/{id}: Targy torlese
    - /user/{id}: Felhasznalo torlese
 
 Egy vegpont leirasa: **Targy adatainak modositasa**
