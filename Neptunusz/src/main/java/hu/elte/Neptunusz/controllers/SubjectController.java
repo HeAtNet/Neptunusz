@@ -18,7 +18,7 @@ import hu.elte.Neptunusz.repositories.SubjectRepository;
 
 
 @RestController
-@RequestMapping("/subject")
+@RequestMapping("/subjects")
 public class SubjectController {
 	
 	@Autowired
