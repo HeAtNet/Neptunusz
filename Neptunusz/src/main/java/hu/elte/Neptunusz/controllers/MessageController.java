@@ -18,7 +18,7 @@ import hu.elte.Neptunusz.repositories.MessageRepository;
 
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/message")
 public class MessageController {
 	 @Autowired
 	    private MessageRepository messageRepository;
