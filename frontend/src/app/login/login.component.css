@@ -1,0 +1,43 @@
+.component-login {
+  background-image: url('/assets/images/login_footer.png');
+  background-repeat: repeat-x;
+  background-position: bottom;
+  min-height: 100vh;
+}
+
+.component-login-header {
+  background-image: url('/assets/images/login_background.jpg');
+  background-repeat: repeat-x;
+  background-position: top;
+  min-height:400px;
+  padding-top: 95px;
+}
+
+.component-login-inner {
+  background-image: url('/assets/images/login_right_image.png');
+  background-position: top right;
+  background-repeat: no-repeat;
+  width:765px;
+  height:300px;
+  margin: 0 auto;
+  position:relative;
+}
+
+.component-login-univ {
+  position: absolute;
+  top: -25px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  font-style: italic;
+  padding-left: 30px;
+  font-family: Verdana, Arial, Helvetica;
+}
+
+.component-login-logo {
+  width: 285px;
+  height: 61px;
+  background-image: url('/assets/images/login_logo.png');
+  background-position: 15px 8px;
+  background-repeat: no-repeat;
+}
