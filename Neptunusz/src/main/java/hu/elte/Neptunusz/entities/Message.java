@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import hu.elte.Neptunusz.entities.Exam.ExamType;
 import lombok.AllArgsConstructor;
@@ -35,11 +35,11 @@ public class Message {
 	private String text;
 	
 	@ManyToOne
-	@JsonBackReference
+	@JsonIgnore
 	private User sender;
 	
 	@ManyToOne
-	@JsonBackReference
+	@JsonIgnore
 	private User adresse;
 	
 	@Column(nullable = false, name = "time_of_message")

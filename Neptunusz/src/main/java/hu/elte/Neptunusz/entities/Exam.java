@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,7 +31,7 @@ public class Exam {
 	private Integer id;
 	
 	@ManyToOne
-	@JsonBackReference
+	@JsonIgnore
 	private Subject subject;
 	
 	@Column(nullable = false,name="START_OF_EXAM")
@@ -51,7 +51,7 @@ public class Exam {
     private Boolean is_del;
 	
 	@ManyToMany(mappedBy = "exams")
-	@JsonBackReference
+	@JsonIgnore
 	private List<User> examers;
 	
 	public enum ExamType{

@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -53,7 +53,7 @@ public class Subject {
 	private List<Exam> exams;
 	
 	@ManyToMany(mappedBy = "subjects")
-	@JsonBackReference
+	@JsonIgnore
 	private List<User> users;
 	
 	@Column(nullable = false)
