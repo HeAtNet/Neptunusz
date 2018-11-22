@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,14 +40,16 @@ public class SubjectController {
         }
     }
 	
+	@Secured({"ROLE_TEACHER"})
 	@PostMapping("")
     public ResponseEntity<Subject> post(@RequestBody Subject subject) {
         Subject savedSubject = subjectRepository.save(subject);
         return ResponseEntity.ok(savedSubject);
     }
 	
-	 @PutMapping("/{id}")
-	 public ResponseEntity<Subject> update
+	@Secured({"ROLE_TEACHER"})
+	@PutMapping("/{id}")
+	public ResponseEntity<Subject> update
 	         (@PathVariable Integer id,
 	           @RequestBody Subject subject) {
 	        Optional<Subject> oSubject = subjectRepository.findById(id);
@@ -56,11 +59,12 @@ public class SubjectController {
 	        } else {
 	            return ResponseEntity.notFound().build();
 	        }
-	    }
+	}
 	 
+	 @Secured({"ROLE_TEACHER"})
 	 @DeleteMapping("/{id}")
-	    public ResponseEntity<Subject> delete
-	            (@PathVariable Integer id) {
+	 public ResponseEntity<Subject> delete
+	        (@PathVariable Integer id) {
 	        Optional<Subject> oSubject= subjectRepository.findById(id);
 	        if (oSubject.isPresent()) {
 	            subjectRepository.deleteById(id);
@@ -68,6 +72,6 @@ public class SubjectController {
 	        } else {
 	            return ResponseEntity.notFound().build();
 	        }
-	    }
+    }
 
 }

@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,12 +38,14 @@ public class ExamController {
 	        }
 	    }
 	    
+	    @Secured({"ROLE_TEACHER"})
 	    @PostMapping("")
 	    public ResponseEntity<Exam> post(@RequestBody Exam exam) {
 	        Exam savedExam = examRepository.save(exam);
 	        return ResponseEntity.ok(savedExam);
 	    }
 	    
+	    @Secured({"ROLE_TEACHER"})
 	    @PutMapping("/{id}")
 	    public ResponseEntity<Exam> update
 	            (@PathVariable Integer id,
@@ -55,7 +58,8 @@ public class ExamController {
 	            return ResponseEntity.notFound().build();
 	        }
 	    }
-	            
+	     
+	    @Secured({"ROLE_TEACHER"})
 	    @DeleteMapping("/{id}")
 	    public ResponseEntity<Exam> delete
 	            (@PathVariable Integer id) {

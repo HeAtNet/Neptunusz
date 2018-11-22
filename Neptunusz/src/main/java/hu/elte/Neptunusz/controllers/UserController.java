@@ -5,6 +5,7 @@ import hu.elte.Neptunusz.repositories.UserRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -53,6 +54,7 @@ public class UserController {
         }
     }
     
+    @Secured({"ROLE_TEACHER"})
     @DeleteMapping("/{id}")
     public ResponseEntity<User> delete(@PathVariable Integer id) {
         Optional<User> oUser = userRepository.findById(id);
