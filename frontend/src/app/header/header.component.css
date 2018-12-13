@@ -1,0 +1,22 @@
+header {
+  display: flex;
+}
+
+.component-header-left {
+  background-image: url('/assets/images/header_left.jpg');
+  height: 220px;
+  width: 400px;
+  background-position: top left;
+}
+.component-header-middle {
+  background-image: url('/assets/images/header_mid.jpg');
+  height: 220px;
+  flex-grow: 1;
+  background-position: top center;
+}
+.component-header-right {
+  background-image: url('/assets/images/header_right.jpg');
+  height: 220px;
+  width: 582px;
+  background-position: top right;
+}

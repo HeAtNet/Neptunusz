@@ -3,7 +3,22 @@
     <div class="component-login-inner">
       <div class="component-login-univ">Eötvös Loránd Tudományegyetem</div>
       <div class="component-login-logo"></div>
-      login works!
+      <h1>Hallgatói</h1>
+      <form (submit)="submit(loginForm)" #loginForm="ngForm">
+      <table class="component-login-table">
+        <tr id="loginFormNeptun" ><td><label for="loginNeptun" >Azonosító:</label></td><td><input [(ngModel)]="model.username" type="text" name="loginNeptun"></td></tr>
+        <tr *ngIf="registration" id="loginFormName"   ><td><label for="loginName"   >Név:      </label></td><td><input [(ngModel)]="model.name" type="text" name="loginName"></td></tr>
+        <tr *ngIf="registration" id="loginFormMail"   ><td><label for="loginMail"   >E-mail:   </label></td><td><input [(ngModel)]="model.mail" type="text" name="loginMail"></td></tr>
+        <tr *ngIf="registration" id="loginFormStudent"><td><label for="loginStudent">Student:  </label></td><td><input type="checkbox" checked name="loginStudent"></td></tr>
+        <tr id="loginFormPass"   ><td><label for="loginPass"   >Jelszó:   </label></td><td><input [(ngModel)]="model.pass" type="password" name="loginPass"></td></tr>
+        <tr *ngIf="!registration" id="loginFormSubmit" ><td></td><td><input type="submit" value="Bejelentkezés" [disabled]="!loginForm.valid" class="component-login-button"></td></tr>
+        <tr *ngIf="registration" id="loginFormSubmit" ><td></td><td><input type="submit" value="Regisztráció" [disabled]="!loginForm.valid" class="component-login-button"></td></tr>
+      </table>
+      </form>
+      <span class="component-login-button" *ngIf="!registration" (click)="registration=true;">Regisztrálok</span>
+      <span class="component-login-button" *ngIf="registration" (click)="registration=false;">Bejelentkezek</span>
+      <span class="component-login-error">{{labesError}}</span>
+      <span class="component-login-success">{{labelSuccess}}</span>
     </div>
   </div>
 </div>

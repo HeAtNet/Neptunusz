@@ -41,3 +41,61 @@
   background-position: 15px 8px;
   background-repeat: no-repeat;
 }
+
+
+h1 {
+  height: 28px;
+  padding-left: 15px;
+  margin-top: 30px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0c74b8;
+  font-family: Verdana;
+  border: solid black;
+  border-width: 0 0 1px 0;
+  width: 315px;
+}
+
+.component-login-table label{
+  display: block;
+  height: 25px;
+  font-size: 12px;
+  color: #525659;
+  font-weight: bold;
+  font-family: Verdana;
+  text-align: right;
+  padding-right: 12px;
+  width: 110px;
+}
+.component-login-button {
+  background-image: url('/assets/images/login_button.png');
+  FONT-SIZE: 12px;
+  background-color: transparent;
+  FONT-FAMILY: Verdana;
+  font-weight: bold;
+  TEXT-DECORATION: none;
+  border: 0px;
+  width: 172px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  color: white;
+  display: block;
+}
+.component-login-error {
+  color:#F00;
+  text-align: center;
+  width: 300px;
+  display: block;
+  font-weight: bold;
+  margin-top: 8px;
+}
+.component-login-success {
+  color:#090;
+  text-align: center;
+  width: 300px;
+  display: block;
+  font-weight: bold;
+  margin-top: 8px;
+}
