@@ -1,4 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-menu-item',
@@ -10,9 +11,13 @@ export class MenuItemComponent implements OnInit {
   @Input('href') href: string;
   @Input('value') txt: string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    this.router.navigate([this.href])
   }
 
 }

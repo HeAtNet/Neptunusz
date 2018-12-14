@@ -1,0 +1,5 @@
+<div [ngClass]="{'opened': isOpened}" class="component-message" id="message{{content.id}}" data-id="{{content.id}}" (click)="open();">
+  <div class="component-message-time">{{content.msgTime}}</div>
+  <div class="component-message-title">{{content.title}}</div>
+  <div *ngIf="isOpened" class="component-message-text">{{content.text}}</div>
+</div>

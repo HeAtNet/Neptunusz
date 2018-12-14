@@ -1,0 +1,8 @@
+.component-exam {
+  background:#eee;
+  border: solid #aaa 1px;
+  border-radius: 2px;
+  display: flex;
+  margin-bottom: 10px;
+  padding: 5px;
+}
