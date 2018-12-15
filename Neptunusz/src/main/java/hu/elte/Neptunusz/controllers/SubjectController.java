@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import hu.elte.Neptunusz.entities.Exam;
 import hu.elte.Neptunusz.entities.Subject;
+import hu.elte.Neptunusz.repositories.ExamRepository;
 import hu.elte.Neptunusz.repositories.SubjectRepository;
+
 
 
 @RestController
@@ -24,6 +27,8 @@ public class SubjectController {
 	
 	@Autowired
 	private SubjectRepository subjectRepository;
+	@Autowired
+	private ExamRepository examRepository;
 	
 	@GetMapping("")
     public ResponseEntity<Iterable<Subject>> getAll() {
@@ -39,6 +44,32 @@ public class SubjectController {
             return ResponseEntity.notFound().build();
         }
     }
+	
+	 @GetMapping("/{id}/exams")
+	    public ResponseEntity<Iterable<Exam>> exams
+	            (@PathVariable Integer id) {
+	        Optional<Subject> subject = subjectRepository.findById(id);
+	        if (subject.isPresent()) {
+	            return ResponseEntity.ok(subject.get().getExams());
+	        } else {
+	            return ResponseEntity.notFound().build();
+	        }
+	    }
+	            
+	 @PostMapping("/{id}/addExam")
+	    public ResponseEntity<Exam> addExam
+	            (@PathVariable Integer id,
+	             @RequestBody Exam exam) {
+	        Optional<Subject> oSubject = subjectRepository.findById(id);
+	        if (oSubject.isPresent()) {
+	            Subject subject = oSubject.get();
+	            exam.setSubject(subject);
+	            return ResponseEntity.ok(
+	                examRepository.save(exam));
+	        } else {
+	            return ResponseEntity.notFound().build();
+	        }
+	    }
 	
 	@Secured({"ROLE_TEACHER"})
 	@PostMapping("")
