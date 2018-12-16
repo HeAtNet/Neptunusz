@@ -45,11 +45,18 @@ TODO::frontend
 ### 2.1 Oldalterkep
 #### Publikus
  - Fooldal
- - TODO::frontend
+ - Belépés
+ - Regisztráció
 #### Bejelentkezett Felhasznalo (Hallgato)
- - TODO::frontend
+ - Tárgyfelvétel
+ - Vizsgafelvétel
+ - Üzenetek
+ - Üzenetküldés
 #### Bejelentkezett Felhasznalo (Tanar)
- - TODO::frontend
+ - Tárgy létrehozása
+ - Vizsga hozzáadás
+ - Üzenetek
+ - Üzenetküldés
 
 ### 2.2 Vegpontok:
  - Get
@@ -61,11 +68,21 @@ TODO::frontend
    - /subjects/{id}: Targy lekerdezese
    - /user: Felhasznalok listazasa
    - /user/{id}: Felhasznalo lekerdezese
+   - /user/{id}/exams: Felhasználó vizsgái
+   - /user/{id}/subjects: Felhasználó tantárgyai
+   - /user/{id}/inbox: Felhasználó bejövő üzenetei
+   - /user/{id}/sent: Felhasználó elküldött üzenetei
  - Post
    - /exams: Vizsga hozzaadasa
    - /messages: Uzenet hozzaadasa
    - /subjects: Targy hozzaadasa
    - /user: Felhasznalo hozzaadasa
+   - /user/{id}/addExam: Felhasználó felvesz egy vizsgát
+   - /user/{id}/addSubject: Felhasználó felvesz egy tártyat
+   - /user/{id}/removeExam: Felhasználó lead egy vizsgát
+   - /user/{id}/removeSubject: Felhasználó lead egy tártyat
+   - /user/{id}/getMessage: Beérkező üzenet hozzáadása a felhasználóhoz
+   - /user/{id}/sendMessage: Elküldött üzenet hozzáadása a felhasználóhoz
  - Put
    - /exams/{id}: Vizsga modositasa
    - /messages/{id}: Uzenet modositasa
@@ -82,15 +99,19 @@ Egy vegpont leirasa: **Targy adatainak modositasa**
 
 ### 2.3 Felhasznalo modell
 
-TODO::frontend
+![Neptunusz Use Case Diagram](images/Neptunusz_Use_Case_Diagram.png)
 
 ### 2.4 Wireframe
 
-TODO::frontend
+https://hallgato.neptun.elte.hu/login.aspx
 
 ### 2.5 Megvalositas
 
-TODO::frontend
+![Belépés](images/login.png)
+![Regisztráció](images/registration.png)
+![Beérkező üzenetek](images/msgs.png)
+![Egy üzenet](images/msg.png)
+
 
 ## 3. Implementacio
 
@@ -165,7 +186,10 @@ Javasolt bongeszo: Google Chrome vagy Firefox.
 #### Telepites
 1. Latogasson el a 	[github.com/HeAtNet/Neptunusz](https://github.com/HeAtNet/Neptunusz) oldalra
 2. Innen le tudja tolteni ZIP fajlkent, vagy a **https://github.com/HeAtNet/Neptunusz.git** GIT cimmel cloneolhatja.
-TODO::frontend
+3. npm i parancsot adjuk ki parancssorban a kicsomagolt állomány mappájában.
+4. npm start-al elindíthatjuk a programot (Allapesetben localhost:4200-on fut a program)
+
 
 ### 6.3 Hasznalata
-TODO::frontend
+1. Böngészőben a keresősávba írjuk be localhost:4200
+2. Regisztrálás és bejelentkezés után használhatjuk a programot.
