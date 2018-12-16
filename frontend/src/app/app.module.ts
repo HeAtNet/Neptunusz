@@ -20,6 +20,7 @@ import { MessageViewComponent } from './message-view/message-view.component';
 import { MessageComponent } from './message/message.component';
 import { ExamComponent } from './exam/exam.component';
 import { SubjectComponent } from './subject/subject.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SubjectComponent } from './subject/subject.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RoutingModule
+    RoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
