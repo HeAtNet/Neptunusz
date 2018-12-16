@@ -8,6 +8,11 @@ export const httpOptions = {
     'Authorization': '',
   })
 };
+export const guestHttpOptions={
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
