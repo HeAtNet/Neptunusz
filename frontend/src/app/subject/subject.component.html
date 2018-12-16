@@ -1,8 +1,7 @@
 <div [ngClass]="{'opened': isOpened}" class="component-subject" id="subject{{content.id}}" data-id="{{content.id}}" (click)="open();">
-  <div class="component-subject-name">{{content.name}}</div>
-  <div class="component-subject-lessonStart">{{content.lessonStart}}</div>
-  <div class="component-subject-lessonEnd">{{content.lessonEnd}}</div>
-  <div class="component-subject-classroom">{{content.classroom}}</div>
-  <div class="component-subject-type">{{content.type}}</div>
-  <div class="component-subject-is_del">{{content.is_del}}</div>
+  <div class="component-subject-name"><span class="info">Tantárgy:</span>{{content.name}}</div>
+  <div *ngIf="isOpened" class="component-subject-lessonStart"><span class="info">Kezdés:</span>{{content.lessonStart}}</div>
+  <div *ngIf="isOpened" class="component-subject-lessonEnd"><span class="info">Vége:</span>{{content.lessonEnd}}</div>
+  <div class="component-subject-classroom"><span class="info">Terem:</span>{{content.classroom}}</div>
+  <div *ngIf="isOpened" class="component-subject-type"><span class="info">Típus:</span>{{content.type}}</div>
 </div>

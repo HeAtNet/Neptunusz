@@ -1,7 +1,6 @@
 <div [ngClass]="{'opened': isOpened}" class="component-exam" id="exam{{content.id}}" data-id="{{content.id}}" (click)="open();">
-  <div class="component-exam-examStart">{{content.examStart}}</div>
-  <div class="component-exam-examEnd">{{content.examEnd}}</div>
-  <div class="component-exam-classroom">{{content.classroom}}</div>
-  <div class="component-exam-type">{{content.type}}</div>
-  <div class="component-exam-is_del">{{content.is_del}}</div>
+  <div class="component-exam-examStart"><span class="info">Kezdete:</span>{{content.examStart}}</div>
+  <div *ngIf="isOpened" class="component-exam-examEnd"><span class="info">Vége:</span>{{content.examEnd}}</div>
+  <div *ngIf="isOpened" class="component-exam-classroom"><span class="info">Terem:</span>{{content.classroom}}</div>
+  <div *ngIf="isOpened" class="component-exam-type"><span class="info">Típus:</span>{{content.type}}</div>
 </div>

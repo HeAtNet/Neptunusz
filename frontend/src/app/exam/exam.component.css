@@ -3,6 +3,37 @@
   border: solid #aaa 1px;
   border-radius: 2px;
   display: flex;
-  margin-bottom: 10px;
+  margin: 0 auto 10px auto;
+  max-width: 800px;
   padding: 5px;
+
+  flex-direction: row;
+}
+.component-exam .info{
+  display: none;
+}
+
+.component-exam.opened {
+  flex-direction: column;
+}
+.component-exam.opened .info{
+  display: block;
+  font-weight: bold;
+}
+
+.component-exam-title{
+  flex-grow: 1;
+}
+
+.component-exam-time {
+  font-style: italic;
+}
+.component-exam.opened .component-exam-time {
+  font-style: normal;
+}
+
+.component-exam.opened .component-exam-title .info,
+.component-exam.opened .component-exam-time .info{
+  display: inline-block;
+  padding-right: 10px;
 }

@@ -1,0 +1,17 @@
+button {
+  background-image: url('/assets/images/login_button.png');
+  FONT-SIZE: 12px;
+  background-color: transparent;
+  FONT-FAMILY: Verdana;
+  font-weight: bold;
+  TEXT-DECORATION: none;
+  border: 0px;
+  width: 172px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  color: white;
+  display: block;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
