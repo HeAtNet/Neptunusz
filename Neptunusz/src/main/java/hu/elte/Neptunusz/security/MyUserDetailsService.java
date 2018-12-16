@@ -21,6 +21,9 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
+    
+    @Autowired
+    private AuthenticatedUser authenticatedUser;
 
     @Override
     @Transactional(readOnly = true)
