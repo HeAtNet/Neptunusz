@@ -1,5 +1,6 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../entities/user';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,15 +11,15 @@ export class LoginComponent implements OnInit, OnChanges {
 
   @Input() user: User;
   model: User = new User();
-  @Output() onSubmit = new EventEmitter<User>();
+  //@Output() onSubmit = new EventEmitter<User>();
 
   registration: boolean = false;
   labelSuccess: string = '';
   labesError: string = '';
 
-  constructor() {
-    //console.log(this.model);
-  }
+  constructor(
+    private authService: AuthService,
+  ) { }
 
   ngOnInit() {
   }
@@ -28,11 +29,26 @@ export class LoginComponent implements OnInit, OnChanges {
   }
 
   submit(form) {
-    if (!form.valid) {
+    /*if (!form.valid) {
       return;
+    }*/
+    console.log(this, form);
+    this.onSubmit();
+  }
+
+  async onSubmit() {
+    const success = await this.authService.login(
+      this.model.username,
+      this.model.pass
+    )
+    if (success) {
+      const url = this.authService.redirectUrl
+        ? this.authService.redirectUrl
+        : '/issues';
+      //this.router.navigate([url])
+    } else {
+      this.labesError = 'Login failed!'
     }
-    //console.log(this.model);
-    this.onSubmit.emit(this.model);
   }
 
 }
