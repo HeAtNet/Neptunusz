@@ -13,6 +13,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +30,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserController {
     
+	@Autowired
+    private BCryptPasswordEncoder passwordEncoder;
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -53,10 +56,26 @@ public class UserController {
         }
     }
     
-    @PostMapping("")
+    /*@PostMapping("")
     public ResponseEntity<User> post(@RequestBody User user) {
     	User savedIssue = userRepository.save(user);
         return ResponseEntity.ok(savedIssue);
+    }*/
+    
+    @PostMapping("register")
+    public ResponseEntity<User> register(@RequestBody User user) {
+        Optional<User> oUser = userRepository.findByUsername(user.getUsername());
+        if (oUser.isPresent()) {
+            return ResponseEntity.badRequest().build();
+        }
+        user.setPass(passwordEncoder.encode(user.getPass()));
+        user.setRole(User.Role.ROLE_STUDENT);
+        return ResponseEntity.ok(userRepository.save(user));
+    }
+
+    @PostMapping("login")
+    public ResponseEntity login(@RequestBody User user) {
+        return ResponseEntity.ok().build();
     }
     
     @PutMapping("/{id}")
