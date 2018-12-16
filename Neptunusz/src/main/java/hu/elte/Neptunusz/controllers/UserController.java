@@ -56,13 +56,13 @@ public class UserController {
         }
     }
     
-    /*@PostMapping("")
+    @PostMapping("")
     public ResponseEntity<User> post(@RequestBody User user) {
-    	User savedIssue = userRepository.save(user);
-        return ResponseEntity.ok(savedIssue);
-    }*/
+    	User savedUser = userRepository.save(user);
+        return ResponseEntity.ok(savedUser);
+    }
     
-    @PostMapping("register")
+    /*@PostMapping("register")
     public ResponseEntity<User> register(@RequestBody User user) {
         Optional<User> oUser = userRepository.findByUsername(user.getUsername());
         if (oUser.isPresent()) {
@@ -71,7 +71,7 @@ public class UserController {
         user.setPass(passwordEncoder.encode(user.getPass()));
         user.setRole(User.Role.ROLE_STUDENT);
         return ResponseEntity.ok(userRepository.save(user));
-    }
+    }*/
 
     @PostMapping("login")
     public ResponseEntity login(@RequestBody User user) {
