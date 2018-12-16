@@ -82,6 +82,7 @@ h1 {
   text-align: center;
   color: white;
   display: block;
+  cursor: pointer;
 }
 .component-login-error {
   color:#F00;
