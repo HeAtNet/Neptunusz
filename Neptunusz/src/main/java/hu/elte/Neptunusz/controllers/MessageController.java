@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import hu.elte.Neptunusz.entities.Message;
 import hu.elte.Neptunusz.repositories.MessageRepository;
 
-@CrossOrigin
 @RestController
+@CrossOrigin
 @RequestMapping("/messages")
 public class MessageController {
 	 @Autowired

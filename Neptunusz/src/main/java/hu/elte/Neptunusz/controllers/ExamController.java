@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import hu.elte.Neptunusz.entities.Exam;
 import hu.elte.Neptunusz.repositories.ExamRepository;
 
-@CrossOrigin
 @RestController
+@CrossOrigin
 @RequestMapping("/exams")
 public class ExamController {
 	 @Autowired

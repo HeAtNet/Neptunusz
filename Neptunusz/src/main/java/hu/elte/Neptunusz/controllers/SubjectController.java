@@ -21,9 +21,8 @@ import hu.elte.Neptunusz.repositories.ExamRepository;
 import hu.elte.Neptunusz.repositories.SubjectRepository;
 
 
-
-@CrossOrigin
 @RestController
+@CrossOrigin
 @RequestMapping("/subjects")
 public class SubjectController {
 	
