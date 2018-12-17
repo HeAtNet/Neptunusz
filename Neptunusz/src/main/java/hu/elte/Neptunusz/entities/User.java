@@ -14,6 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
@@ -38,7 +39,7 @@ public class User{
     private String name;
     // Full name
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String mail;
     // E-mail address
 
@@ -77,7 +78,7 @@ public class User{
     @JoinTable
     private List<Subject> subjects;
     
-    @Column(nullable = false)
+    @ColumnDefault(value = "0")
     private Boolean is_del;
     // true = User deleted
 

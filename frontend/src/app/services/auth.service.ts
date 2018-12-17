@@ -22,7 +22,7 @@ export class AuthService {
 
   user: User = null;
   redirectUrl: string;
-  private usersUrl = 'http://localhost:8080/users';
+  private usersUrl = 'http://localhost:8080/user/login';
 
   constructor(
     private http: HttpClient
@@ -45,6 +45,7 @@ export class AuthService {
         httpOptions
       ).toPromise();
       this.user = user;
+      console.log(user);
       return Promise.resolve(true);
     } catch (e) {
       console.log('hiba', e);

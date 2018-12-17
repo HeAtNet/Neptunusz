@@ -60,6 +60,7 @@ public class UserController {
     public ResponseEntity<User> post(@RequestBody User user) {
     	User savedUser = userRepository.save(user);
         return ResponseEntity.ok(savedUser);
+    	//return ResponseEntity.ok().build();
     }
     
     /*@PostMapping("register")
@@ -73,9 +74,9 @@ public class UserController {
         return ResponseEntity.ok(userRepository.save(user));
     }*/
 
-    @PostMapping("login")
+    @PostMapping("/login")
     public ResponseEntity login(@RequestBody User user) {
-        return ResponseEntity.ok().build();
+    	return ResponseEntity.ok().build();
     }
     
     @PutMapping("/{id}")
