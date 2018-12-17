@@ -9,7 +9,8 @@ A backend Java Spring Boot technologiaval mukodik, MVC modell szerint fejlesztve
 A frontend a szerveroldalt REST API-n keresztul eri el.
 
 ### 0.2. Frontend
-TODO::frontend
+A frontend NodeJS-el generált Angular Js kóddal működik.
+A backenddel AJAX technológiával kommunikál.
 
 ## 1. Kovetelmenyek
 
@@ -97,6 +98,9 @@ TODO::frontend
 Egy vegpont leirasa: **Targy adatainak modositasa**
 ![Targy adatainak modositasa](images/subject_edit_endpoint.png)
 
+Tárgy adatainak módosítasa User, Frontend, Backend szekvenciadiagrammal:
+![Targy adatainak modositasa](images/subject_edit_endpoint_with_frontend.png)
+
 ### 2.3 Felhasznalo modell
 
 ![Neptunusz Use Case Diagram](images/Neptunusz_Use_Case_Diagram.png)
@@ -130,28 +134,29 @@ Lokalis IDE: SpringToolSuite 4 (STS)
 ### 3.3 Konyvtarstruktúra
 ```
 Neptunusz
-├───backend
-│   ├───src
-│   │   └───main
-│   │       └───resources
-│   │           ├───static
-│   │           └───templates
-│   └───target
-│       ├───classes
-│       │   └───hu
-│       │       └───elte
-│       │           └───Neptunusz
-│       │               ├───repositories
-│       │               └───security
-│       ├───generated-sources
-│       │   └───annotations
-│       ├───generated-test-sources
-│       │   └───test-annotations
-│       └───test-classes
-│           └───hu
-│               └───elte
-│                   └───Neptunusz
 ├───frontend
+│   └───src
+│       ├───app
+│       │   ├───entities
+│       │   ├───exam
+│       │   ├───exam-list
+│       │   ├───exam-view
+│       │   ├───header
+│       │   ├───layout-logged-in
+│       │   ├───login
+│       │   ├───menu
+│       │   ├───menu-item
+│       │   ├───message
+│       │   ├───message-list
+│       │   ├───message-view
+│       │   ├───routing
+│       │   ├───services
+│       │   ├───subject
+│       │   ├───subject-list
+│       │   └───subject-view
+│       ├───assets
+│       │   └───images
+│       └───environments
 ├───images
 └───Neptunusz
     └───src
