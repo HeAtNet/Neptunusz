@@ -20,3 +20,42 @@ note right of Subject vegpont
 end note
 Subject vegpont-->User: Modositas eredmenye
 
+
+
+
+
+
+
+
+
+
+
+#https://www.websequencediagrams.com/
+title Targy adatainak modositasa
+
+User->Frontend: Kattint a modositasra
+
+
+Frontend->Backend: GET: Targy lekerese
+note right of Backend
+    Targy kikeresese
+    az adatbazisbol
+end note
+Backend-->Frontend: A kert targy reszletei
+
+Frontend-->User: Urlap visszaadasa
+note left of User
+    Targy adatainak
+    modositasa
+end note
+User->Frontend: Urlap elkuldese
+
+
+Frontend->Backend: PUT: Modositott targyadatok
+note right of Backend
+    Ellenorzes,
+    adatbazisba iras
+end note
+Backend-->Frontend: Modositas eredmenye
+Frontend-->User: Eredmeny visszajelzese
+
