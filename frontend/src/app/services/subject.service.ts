@@ -8,20 +8,20 @@ import { Subject } from "../entities/subject";
   providedIn: 'root'
 })
 export class SubjectService {
-  private subjectUrl = 'http://localhost:8080/subject';
+  private subjectUrl = 'http://localhost:8080/subjects';
     constructor(private http: HttpClient) { }
 
     getSubjects(): Promise<Subject[]> {
       return this.http.get<Subject[]>(
         this.subjectUrl,
-        guestHttpOptions
+        httpOptions
       ).toPromise();
     }
 
     getSubject(id: number): Promise<Subject> {
       return this.http.get<Subject>(
         `${this.subjectUrl}/${id}`,
-        guestHttpOptions
+        httpOptions
       ).toPromise();
     }
 

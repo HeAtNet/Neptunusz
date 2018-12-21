@@ -8,20 +8,20 @@ import { Exam } from "../entities/exam";
   providedIn: 'root'
 })
 export class ExamService {
-  private examUrl = 'http://localhost:8080/exam';
+  private examUrl = 'http://localhost:8080/exams';
     constructor(private http: HttpClient) { }
 
     getExams(): Promise<Exam[]> {
       return this.http.get<Exam[]>(
         this.examUrl,
-        guestHttpOptions
+        httpOptions
       ).toPromise();
     }
 
     getExam(id: number): Promise<Exam> {
       return this.http.get<Exam>(
         `${this.examUrl}/${id}`,
-        guestHttpOptions
+        httpOptions
       ).toPromise();
     }
 

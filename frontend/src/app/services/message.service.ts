@@ -8,20 +8,20 @@ import { Message } from "../entities/message";
   providedIn: 'root'
 })
 export class MessageService {
-  private messageUrl = 'http://localhost:8080/message';
+  private messageUrl = 'http://localhost:8080/messages';
     constructor(private http: HttpClient) { }
 
     getMessages(): Promise<Message[]> {
       return this.http.get<Message[]>(
         this.messageUrl,
-        guestHttpOptions
+        httpOptions
       ).toPromise();
     }
 
     getMessage(id: number): Promise<Message> {
       return this.http.get<Message>(
         `${this.messageUrl}/${id}`,
-        guestHttpOptions
+        httpOptions
       ).toPromise();
     }
 

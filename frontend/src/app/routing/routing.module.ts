@@ -46,7 +46,7 @@ const routes: Routes = [
   },
   {
     path: 'logout',
-    component: LayoutLoggedInComponent,
+    redirectTo: '/login',
   },
 ];
 

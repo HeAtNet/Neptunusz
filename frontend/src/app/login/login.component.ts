@@ -1,6 +1,7 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../entities/user';
 import { AuthService } from '../services/auth.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit, OnChanges {
 
   constructor(
     private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -45,7 +47,7 @@ export class LoginComponent implements OnInit, OnChanges {
       const url = this.authService.redirectUrl
         ? this.authService.redirectUrl
         : '/issues';
-      //this.router.navigate([url])
+      this.router.navigate(["/message"])
     } else {
       this.labesError = 'Login failed!'
     }

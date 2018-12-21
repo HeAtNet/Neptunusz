@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from '../entities/message';
+import { MessageService } from '../services/message.service';
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-message-view',
@@ -9,11 +11,14 @@ import { Message } from '../entities/message';
 export class MessageViewComponent implements OnInit {
   data: Message = new Message();
 
-  constructor() {
-    this.data={id: 10, msgTime: "0 2019.01.01.", text: "0 text", title: "0 title"};
-  }
+  constructor(
+    private messageService:MessageService,
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.data = await this.messageService.getMessage(parseInt(id, 10));
   }
 
 }

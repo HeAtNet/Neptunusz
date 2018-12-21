@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from '../entities/subject';
+import { SubjectService } from '../services/subject.service';
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-subject-view',
@@ -9,11 +11,14 @@ import { Subject } from '../entities/subject';
 export class SubjectViewComponent implements OnInit {
   data: Subject = new Subject();
 
-  constructor() {
-    this.data={id: 0,name: 'name0',lessonStart: 'lessonStart0',lessonEnd: 'lessonEnd0',classroom: 'classroom0',type: 'type0',is_del: false};
-  }
+  constructor(
+    private subjectService:SubjectService,
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.data = await this.subjectService.getSubject(parseInt(id, 10));
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Exam } from '../entities/exam';
+import { ExamService } from '../services/exam.service';
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-exam-view',
@@ -9,11 +11,14 @@ import { Exam } from '../entities/exam';
 export class ExamViewComponent implements OnInit {
   data: Exam = new Exam();
 
-  constructor() {
-    this.data={id: 0,examStart: 'examStart0',examEnd: 'examEnd0',classroom: 'classroom0',type: 'type0',is_del: false};
-  }
+  constructor(
+    private examService:ExamService,
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.data = await this.examService.getExam(parseInt(id,2));
   }
 
 }
